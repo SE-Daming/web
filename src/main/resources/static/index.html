@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+</head>
+</head>
+<body>
+    <div id="d1">
+        HELLO,WORLD   {{msg}}
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#d1',
+        data:{
+            msg:'666'
+        },
+        mounted(){
+            axios({
+                method:"get",
+                url:"http://localhost:8080/demo1"
+            }).then(res=>{
+                alert(JSON.stringify(res.data))
+            })
+        }
+    })
+</script>
+</html>
